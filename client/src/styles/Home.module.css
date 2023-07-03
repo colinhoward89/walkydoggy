@@ -2,23 +2,26 @@
   color: #333;
   padding-bottom: 10px;
   text-align: center;
-  font-size: 50px;
+  font-size: 36px;
   margin-top: auto;
 }
+
 .text {
   color: #3e3c3c;
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .button {
-  padding: 5px 10px;
-  font-size: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
   color: hsla(0, 0%, 90%, 1);
   background: rgb(57, 56, 56);
   border-radius: 10px;
   box-shadow: 2px 2px 15px -5px #a7a7a7;
-  margin: 5px;
+  margin: 10px auto;
+  display: block;
+  width: fit-content;
 }
 
 .button:hover {
@@ -26,11 +29,64 @@
 }
 
 .buttonselected {
-  padding: 5px 10px;
-  font-size: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
   color: rgb(57, 56, 56);
   background: hsla(0, 0%, 90%, 1);
   border-radius: 10px;
   box-shadow: 2px 2px 15px -5px #a7a7a7;
-  margin: 5px;
+  margin: 10px auto;
+  display: block;
+  width: fit-content;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imageContainer {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.contentContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tabButtons button {
+  margin-right: 10px;
+}
+
+.tabContent {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }

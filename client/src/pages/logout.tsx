@@ -19,32 +19,32 @@ const Logout = () => {
   };
 
   return (
-    <div className="container">
-        <h2 className={styles.text}>Are you sure you want to log out?</h2>
-        <br></br>
-        <p className={styles.text}>
-        <button
-          className="btn-login"
-          onClick={() => {
-            if (isOwner === "true") {
-              router.push("/owneraccount");
-            } else {
-              router.push("/walkeraccount");
-            }
-          }}
-        >
-          No
-        </button>
-        <button
-          color="error"
-          className="btn-clicked"
-          onClick={handleClick}
-        >
-          Yes
-        </button>
-      </p>
-    </div>
-  );
+<div className="container">
+  <h2 className={styles.text}>Are you sure you want to log out?</h2>
+  <div className="button-container">
+    <button
+      className="btn-login"
+      onClick={() => {
+        if (isOwner === "true") {
+          router.push("/owneraccount");
+        } else {
+          router.push("/walkeraccount");
+        }
+      }}
+      aria-label="No, cancel log out"
+    >
+      No
+    </button>
+    <button
+      className="btn-clicked"
+      onClick={handleClick}
+      aria-label="Yes, confirm log out"
+    >
+      Yes
+    </button>
+  </div>
+</div>
+  )
 };
 
 export default Logout;

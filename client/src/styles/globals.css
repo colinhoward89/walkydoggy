@@ -356,6 +356,12 @@ ul {
   background-color: rgb(73, 72, 74);
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .container-wrapper {
   height: 700px; /* or any other fixed value */
   position: relative; /* add position relative to allow pic-home to be positioned relative to it */
