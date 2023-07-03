@@ -53,7 +53,7 @@ const Login = () => {
   return (
     <section>
       <div className="form-control" style={{ textAlign: "center" }}>
-        <form className="add-form" onSubmit={handleSubmit}>
+        <form aria-label="Login form" className="add-form" onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
           <input
             id="username"
@@ -63,6 +63,7 @@ const Login = () => {
             value={state.username}
             onChange={handleChange}
             autoComplete="off"
+            aria-label="Username"
           />
           <label htmlFor="password">Password</label>
           <input
@@ -72,12 +73,14 @@ const Login = () => {
             name="password"
             value={state.password}
             onChange={handleChange}
+            aria-label="Password"
           />
           <p></p>
           <button
             className="btn-clicked"
             type="submit"
             disabled={validateForm()}
+            aria-label="Login"
           >
             Login
           </button>
