@@ -36,13 +36,17 @@ const walkerhistory = () => {
     <>
       <div className="myaccount">
         <Link href="/walkeraccount/find">
-          <button className={styles.button}>Find a Walk</button>
+          <button className={styles.button} aria-label="Find a Walk">
+            Find a Walk
+          </button>
         </Link>
         <Link href="/walkeraccount/scheduled">
-          <button className={styles.button}>Scheduled Walks</button>
+          <button className={styles.buttonselected} aria-label="Scheduled Walks">
+            Scheduled Walks
+          </button>
         </Link>
         <Link href="/walkeraccount/walkerhistory">
-          <button className={styles.buttonselected}>
+          <button className={styles.button} aria-label="View My Walk History">
             View My Walk History
           </button>
         </Link>

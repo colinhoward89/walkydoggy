@@ -36,15 +36,20 @@ const find = () => {
     <>
       <div className="myaccount">
         <Link href="/walkeraccount/find">
-          <button className={styles.buttonselected}>Find a Walk</button>
+          <button className={styles.buttonselected} aria-label="Find a Walk">
+            Find a Walk
+          </button>
         </Link>
         <Link href="/walkeraccount/scheduled">
-          <button className={styles.button}>Scheduled Walks</button>
+          <button className={styles.button} aria-label="Scheduled Walks">
+            Scheduled Walks
+          </button>
         </Link>
         <Link href="/walkeraccount/walkerhistory">
           <button className={styles.button}>View My Walk History</button>
         </Link>
       </div>
+      <h1 className={styles.title}>Find a Walk</h1>
       <WalkList walks={futureWalks} onJoin={joinWalk} findWalks={true} />
     </>
   );
