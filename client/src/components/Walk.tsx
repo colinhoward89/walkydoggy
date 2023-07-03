@@ -36,12 +36,13 @@ const Walk = ({
 }: WalkProps) => {
   return (
     walk && (
-      <div className="walk-div" data-testid="walk-component">
+      <div className="event-div">
+        <div id="event-list">
         <div className="left">
-          <div className="walk-day-month">
+          <div className="event-day-month">
             {moment(walk.date).format("Do[\n]MMM")}
           </div>
-          <div className="walk-outer">
+          <div className="event-outer">
             <div className="list-title">{walk.dogName}</div>
             <div className="list-date">
               <p>
@@ -101,6 +102,7 @@ const Walk = ({
               </div>
             </>
           )}
+        </div>
         </div>
       </div>
     )
