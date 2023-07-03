@@ -93,57 +93,60 @@ const form = (): JSX.Element => {
 
   return (
     <>
-      <div className="myaccount">
+      <section className="myaccount">
         <Link href="/walkeraccount/find">
-          <button className={styles.button}>Find a Walk</button>
+          <button className={styles.button} aria-label="Find a Walk">Find a Walk</button>
         </Link>
         <Link href="/walkeraccount/scheduled">
-          <button className={styles.button}>Scheduled Walks</button>
+          <button className={styles.button} aria-label="Scheduled Walks">Scheduled Walks</button>
         </Link>
         <Link href="/walkeraccount/walkerhistory">
-          <button className={styles.button}>View My Walk History</button>
+          <button className={styles.button} aria-label="View My Walk History">View My Walk History</button>
         </Link>
-      </div>
-      <h2 className={styles.title}> Walk Record </h2>
-      <div className="addform">
+      </section>
+
+      <h2 className={styles.title}>Walk Record</h2>
+
+      <section className="addform">
         <form onSubmit={onSubmit}>
           <div className="submit-form-control">
-            <label className="adjustfont">PEE</label>
+            <label htmlFor="pee" className="adjustfont">PEE</label>
             <input
               type="checkbox"
+              id="pee"
               name="pee"
               onChange={handleChange}
               defaultChecked={fullWalk.didPee}
             />
           </div>
-          <div>
-            <div className="submit-form-control">
-              <label className="adjustfont">POO 💩</label>
-              <input
-                type="checkbox"
-                name="poo"
-                onChange={handleChange}
-                defaultChecked={fullWalk.didPoo}
-              />
-            </div>
+          <div className="submit-form-control">
+            <label htmlFor="poo" className="adjustfont">POO 💩</label>
+            <input
+              type="checkbox"
+              id="poo"
+              name="poo"
+              onChange={handleChange}
+              defaultChecked={fullWalk.didPoo}
+            />
           </div>
           <div>
             <input type="submit" value="Submit" className="btn-record" />
           </div>
         </form>
-      </div>
+      </section>
 
-      <div className="upload-container-outer">
+      <section className="upload-container-outer">
         <div className="upload-container">
           <div>
             <input
               type="file"
               onChange={(e) => setImage(e.target.files[0])}
-            ></input>
-            <button onClick={uploadImage}>Upload</button>
+              aria-label="Choose an image to upload"
+            />
+            <button onClick={uploadImage} aria-label="Upload">Upload</button>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

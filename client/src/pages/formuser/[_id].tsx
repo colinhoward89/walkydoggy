@@ -31,28 +31,30 @@ const formuser = (): JSX.Element => {
 
   return (
     <>
-      <div className="myaccount">
+      <section className="myaccount">
         <Link href="/owneraccount/book">
-          <button className={styles.button}>Book a walk</button>
+          <button className={styles.button} aria-label="Book a walk">Book a walk</button>
         </Link>
         <Link href="/owneraccount/upcoming">
-          <button className={styles.button}>Upcoming Walks</button>
+          <button className={styles.button} aria-label="Upcoming Walks">Upcoming Walks</button>
         </Link>
         <Link href="/owneraccount/ownerhistory">
-          <button className={styles.button}>View My Walk History</button>
+          <button className={styles.button} aria-label="View My Walk History">View My Walk History</button>
         </Link>
-      </div>
-      <h2 className={styles.title}> Walk Record </h2>
+      </section>
+
+      <h2 className={styles.title}>Walk Record</h2>
+
       <div className="record-div-outer">
         {walkRecord !== undefined ? (
-          <div className="record-div">
+          <article className="record-div">
             <p>
               <strong>Date:</strong>
               {moment(walkRecord.date).format("MMM Do YY")}
             </p>
             {/* <p>
-              <strong>WalkerID:</strong> {walkRecord.walkerID}
-            </p> */}
+          <strong>WalkerID:</strong> {walkRecord.walkerID}
+        </p> */}
             <p>
               <strong>Pick-up location:</strong> {walkRecord.pickUpLocation}
             </p>
@@ -62,12 +64,16 @@ const formuser = (): JSX.Element => {
             <p>
               <strong>PEE:</strong> {walkRecord.didPee ? "Yes" : "No"}
             </p>
-            {walkRecord.imageURL
-              ? walkRecord.imageURL.map((img) => <img src={img} key={img} />)
-              : null}
-          </div>
+            {walkRecord.imageURL ? (
+              <div className="image-container">
+                {walkRecord.imageURL.map((img) => (
+                  <img src={img} key={img} alt="Walk record image" />
+                ))}
+              </div>
+            ) : null}
+          </article>
         ) : (
-          "We unfortunately don't have any pee or poo data yet!"
+          <p>We unfortunately don't have any pee or poo data yet!</p>
         )}
       </div>
     </>
