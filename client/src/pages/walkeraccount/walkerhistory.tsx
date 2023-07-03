@@ -41,17 +41,17 @@ const walkerhistory = () => {
           </button>
         </Link>
         <Link href="/walkeraccount/scheduled">
-          <button className={styles.buttonselected} aria-label="Scheduled Walks">
+          <button className={styles.button} aria-label="Scheduled Walks">
             Scheduled Walks
           </button>
         </Link>
         <Link href="/walkeraccount/walkerhistory">
-          <button className={styles.button} aria-label="View My Walk History">
+          <button className={styles.buttonselected} aria-label="View My Walk History">
             View My Walk History
           </button>
         </Link>
       </div>
-      <WalkList walks={pastWalks} formPath="/form/" onDelete={deleteWalk} />
+      <WalkList walks={pastWalks} ownerHistory={true} formPath="/form/" onDelete={deleteWalk} />
     </>
   );
 };
