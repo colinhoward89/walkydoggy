@@ -49,17 +49,16 @@ const ownerhistory = () => {
     <>
       <div className="myaccount">
         <Link href="/owneraccount/book">
-          <button className={styles.button}>Book a walk</button>
+          <button className={styles.button} aria-label="Book a walk">Book a walk</button>
         </Link>
         <Link href="/owneraccount/upcoming">
           <button className={styles.button}>Upcoming Walks</button>
         </Link>
         <Link href="/owneraccount/ownerhistory">
-          <button className={styles.buttonselected}>
-            View My Walk History
-          </button>
+          <button className={styles.buttonselected} aria-label="View My Walk History">View My Walk History</button>
         </Link>
       </div>
+      <h1 className={styles.title}>Walk History</h1>
       <WalkList
         walks={pastWalks}
         formPath="/formuser/"

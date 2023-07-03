@@ -47,47 +47,51 @@ const book = (): JSX.Element => {
 
   return (
     <>
-      <div className="myaccount">
+      <section className="myaccount">
         <Link href="/owneraccount/book">
-          <button className={styles.buttonselected}>Book a walk</button>
+          <button className={styles.buttonselected} aria-label="Book a walk">Book a walk</button>
         </Link>
         <Link href="/owneraccount/upcoming">
-          <button className={styles.button}>Upcoming Walks</button>
+          <button className={styles.button} aria-label="Upcoming Walks">Upcoming Walks</button>
         </Link>
         <Link href="/owneraccount/ownerhistory">
-          <button className={styles.button}>View My Walk History</button>
+          <button className={styles.button} aria-label="View My Walk History">View My Walk History</button>
         </Link>
-      </div>
+      </section>
+
       <form className="add-form" onSubmit={onSubmit}>
         <div className="form-control">
-          <label>DOG NAME</label>
+          <label htmlFor="dogName">DOG NAME</label>
           <input
             type="text"
-            name="title"
-            placeholder="your dog's name"
+            id="dogName"
+            name="dogName"
+            placeholder="Your dog's name"
             required
             value={dogName}
             onChange={(e) => setDogName(e.target.value)}
           />
         </div>
         <div className="form-control">
-          <label>DATE</label>
+          <label htmlFor="date">DATE</label>
           <DatePicker
             className="date-picker"
+            id="date"
             showTimeSelect
             required
             selected={date}
-            onSelect={(date: SetStateAction<Date>) => setDate(date)} //when day is clicked
-            onChange={(date: SetStateAction<Date>) => setDate(date)} //only when value has changed
+            onSelect={(date) => setDate(date)} // When day is clicked
+            onChange={(date) => setDate(date)} // Only when value has changed
             dateFormat="Pp"
           />
         </div>
         <div className="form-control">
-          <label>PICK-UP LOCATION</label>
+          <label htmlFor="pickUpLocation">PICK-UP LOCATION</label>
           <input
             type="text"
-            name="venue"
-            placeholder="pick up address"
+            id="pickUpLocation"
+            name="pickUpLocation"
+            placeholder="Pick up address"
             autoComplete="off"
             required
             value={pickUpLocation}

@@ -36,15 +36,16 @@ const upcoming = () => {
     <>
       <div className="myaccount">
         <Link href="/owneraccount/book">
-          <button className={styles.button}>Book a walk</button>
+          <button className={styles.button} aria-label="Book a walk">Book a walk</button>
         </Link>
         <Link href="/owneraccount/upcoming">
-          <button className={styles.buttonselected}>Upcoming Walks</button>
+          <button className={styles.buttonselected} aria-label="Upcoming Walks">Upcoming Walks</button>
         </Link>
         <Link href="/owneraccount/ownerhistory">
           <button className={styles.button}>View My Walk History</button>
         </Link>
       </div>
+      <h1 className={styles.title}>Upcoming Walks</h1>
       <WalkList
         walks={futureWalks}
         onDelete={deleteWalk}
