@@ -90,7 +90,7 @@ const Register = () => {
           onSubmit={handleSubmit}
         >
           <label style={{ display: "inline-block", textAlign: "center" }}>
-            <span>Are you a Dog Owner?</span>
+            <span>Owner?</span>
             <input
               type="checkbox"
               name="isOwner"
@@ -100,7 +100,7 @@ const Register = () => {
             />
           </label>
           <label style={{ display: "inline-block" }}>
-            <span>Are you a Dog Walker?</span>
+            <span>Walker?</span>
             <input
               type="checkbox"
               name="isWalker"

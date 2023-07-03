@@ -53,17 +53,22 @@ const Login = () => {
   return (
     <section>
       <div className="form-control" style={{ textAlign: "center" }}>
-        <form aria-label="Login form" className="add-form" onSubmit={handleSubmit}>
+        <form
+          aria-label="Login form"
+          className="add-form"
+          onSubmit={handleSubmit}
+        >
           <label htmlFor="username">Username</label>
           <input
             id="username"
             type="text"
-            placeholder="username"
+            placeholder="Username"
             name="username"
             value={state.username}
             onChange={handleChange}
             autoComplete="off"
-            aria-label="Username"
+            aria-labelledby="username"
+            required
           />
           <label htmlFor="password">Password</label>
           <input
@@ -73,21 +78,22 @@ const Login = () => {
             name="password"
             value={state.password}
             onChange={handleChange}
-            aria-label="Password"
+            aria-labelledby="password"
+            required
           />
           <p></p>
           <button
             className="btn-clicked"
             type="submit"
             disabled={validateForm()}
-            aria-label="Login"
+            aria-label="Submit Login Form"
           >
             Login
           </button>
         </form>
       </div>
     </section>
-  );
+  );  
 };
 
 export default Login;
