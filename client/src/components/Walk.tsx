@@ -42,9 +42,11 @@ const Walk = ({
             {moment(walk.date).format("Do[\n]MMM")}
           </div>
           <div className="walk-outer">
-            <div className="list-title">{walk.dogName} </div>
+            <div className="list-title">{walk.dogName}</div>
             <div className="list-date">
-              <p>{moment(walk.date).format("hh:mm a - MMMM  Do, YYYY")}</p>
+              <p>
+                {moment(walk.date).format("hh:mm a - MMMM  Do, YYYY")}
+              </p>
             </div>
             <div className="list-venue">
               <p>{walk.pickUpLocation}</p>
@@ -52,7 +54,11 @@ const Walk = ({
           </div>
           {findWalks ? (
             <div className="btn-dev">
-              <button className="btn" onClick={() => onJoin(walk._id)}>
+              <button
+                className="btn"
+                onClick={() => onJoin(walk._id)}
+                aria-label="Walk this doggy"
+              >
                 Walk this doggy!
               </button>
             </div>
@@ -60,27 +66,37 @@ const Walk = ({
             <>
               <div className="btn-dev">
                 <Link href={`${formPath}${walk._id}`}>
-                  <button className="btn">View this walky</button>
+                  <button className="btn">
+                    View this walky
+                  </button>
                 </Link>
                 <FaTrash
                   data-testid="delete-button"
                   className="dele-btn"
                   onClick={() => onDelete(walk._id)}
+                  aria-label="Delete this walky"
                 />
               </div>
             </>
           ) : ownerUpcoming ? (
-            <FaTrash className="dele-btn" onClick={() => onDelete(walk._id)} />
+            <FaTrash
+              className="dele-btn"
+              onClick={() => onDelete(walk._id)}
+              aria-label="Delete this walky"
+            />
           ) : (
             <>
               <div className="btn-dev">
                 <Link href={`${formPath}${walk._id}`}>
-                  <button className="btn">Update this walky</button>
+                  <button className="btn">
+                    Update this walky
+                  </button>
                 </Link>
                 <FaTrash
                   data-testid="delete-button"
                   className="dele-btn"
                   onClick={() => onDelete(walk._id)}
+                  aria-label="Delete this walky"
                 />
               </div>
             </>

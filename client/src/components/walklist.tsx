@@ -21,7 +21,7 @@ const WalkList = ({
 }: WalkProps) => {
   return (
     <>
-      <div id="list">
+      <div id="list" role="list">
         {walks &&
           walks.map((walk) => {
             return (
@@ -39,6 +39,7 @@ const WalkList = ({
           })}
       </div>
     </>
+
   );
 };
 

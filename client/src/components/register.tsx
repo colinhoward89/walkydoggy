@@ -84,38 +84,45 @@ const Register = () => {
   return (
     <section>
       <div className="form-control" style={{ textAlign: "center" }}>
-        <form aria-label="form" className="add-form" onSubmit={handleSubmit}>
+        <form
+          aria-label="Registration form"
+          className="add-form"
+          onSubmit={handleSubmit}
+        >
           <label style={{ display: "inline-block", textAlign: "center" }}>
-            Dog Owner
+            <span>Are you a Dog Owner?</span>
             <input
               type="checkbox"
               name="isOwner"
               checked={state.isOwner}
               onChange={handleCheckChange}
+              aria-label="Dog Owner"
             />
           </label>
           <label style={{ display: "inline-block" }}>
-            <span>Dog Walker</span>
+            <span>Are you a Dog Walker?</span>
             <input
               type="checkbox"
               name="isWalker"
               checked={state.isWalker}
               onChange={handleCheckChange}
+              aria-label="Dog Walker"
             />
           </label>
           <label>
-            Username
+            <span>Username</span>
             <input
               type="text"
-              placeholder="username"
+              placeholder="Username"
               name="username"
               value={state.username}
               onChange={handleChange}
               autoComplete="off"
+              aria-label="Username"
             />
           </label>
           <label>
-            E-mail
+            <span>E-mail</span>
             <input
               type="text"
               placeholder="name@mail.com"
@@ -123,16 +130,18 @@ const Register = () => {
               value={state.email}
               onChange={handleChange}
               autoComplete="off"
+              aria-label="E-mail"
             />
           </label>
           <label>
-            Password
+            <span>Password</span>
             <input
               type="password"
               placeholder="******"
               name="password"
               value={state.password}
               onChange={handleChange}
+              aria-label="Password"
             />
           </label>
           <div className="login-container">
@@ -140,6 +149,7 @@ const Register = () => {
               className="btn-clicked"
               type="submit"
               disabled={validateForm()}
+              aria-label="Register"
             >
               Register
             </button>

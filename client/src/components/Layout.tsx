@@ -7,10 +7,12 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="content">
-      <Navbar />
-      {children}
-      <Footer />
+    <div className="content" role="main">
+      <header>
+        <Navbar />
+      </header>
+      <main>{children}</main>
+        <Footer />
     </div>
   );
 };

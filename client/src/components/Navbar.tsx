@@ -7,10 +7,10 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="logo">
+      <div className="logo" aria-label="Walky Doggy Logo">
         <Image
           src="/dog6.png"
-          alt="man-with-dag"
+          alt="Walky Doggy Logo"
           width={128}
           height={128}
           priority
